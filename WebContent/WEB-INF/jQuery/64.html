@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.5.1.js"></script>
+</head>
+<body>
+	<!-- h1태그에 순서가 있음 -->
+	<h1>Hello jQuery!</h1>
+	<h1>Hello jQuery!</h1>
+	<h1>Hello jQuery!</h1>
+	
+	<script>
+ 		/* $("h1").css()
+ 		$("h1").html()
+ 		$("h1").text()
+ 		$("h1").attr() */
+ 		
+ 		//1. Setter 형태 (=값을 지정) - 제이쿼리 객체 리턴
+ 		
+ 		//1-1. A. (문자열, 문자열)
+ 		//$("h1").css("color", "red")
+		//1-2. B. 객체지정 -- 여러값 한번에 입력 가능
+		$("h1").css({
+			"color": "red",
+			"background-color": "orange",
+			"text-align": "center"
+		})
+		
+		$("h1").css({
+			color: "black", backgroundColor: "yellow", textAlign: "center"
+		})
+		
+		// C. 함수로 값을 입력
+		var array = ["red", "blue", "green"]
+		$("h1").css("color", function(index) {
+			return array[index]
+		})
+		//함수를 객체로
+		$("h1").css({
+			"color": function(index) { return array[index] })
+		});
+		 		
+ 		//2. Getter - 매개변수 하나를 생략, 사용 - 문자열을 리턴
+ 		var value = $("h1").css("color");
+ 		alert(value); 		
+ 		
+  	</script>
+</body>
+</html>

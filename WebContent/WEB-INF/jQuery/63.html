@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.5.1.js"></script>
+</head>
+<body>
+	<h1></h1>
+	
+	<script>
+  //== windows.onload = function(){}
+  /* 	$(document).ready(function(){
+  		
+  	}); */
+  	// CSS 선택자
+  	$("h1").css("color", "blue") //화면위에 h1태그 선택
+  	$("h1").css("background-color", "orange")
+  	$("h1").css("color", "blue")
+  	$("h1").css("text-align", "center")
+  	$("h1").html("안녕하세요") // = dom.innerHTML
+  	
+  	
+  	//태그 형태의 문자열
+  	$("<h1></h1>") //문서객체 생성
+  	
+  	//문서 객체 넣기
+  	var header = document.querySelector("h1")
+  	$(header).css("color", "red")
+  	
+  	$("<h1></h1>")
+  		.appendTo("body") //h1뒤에 body 태그 생성
+  		.css("color", "red")
+  		.html("Hello jQuery!")
+  	
+  	//javascript + jQuery
+  	var headerB = document.createElement("h1");
+  	$(headerB).appendTo("body").css("color","blue").html("love you")
+  	
+  	</script>
+</body>
+</html>

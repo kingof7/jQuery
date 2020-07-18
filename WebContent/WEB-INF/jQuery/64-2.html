@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.5.1.js"></script>
+</head>
+<body>
+	<img />
+	<img />
+	<img />
+	
+	<h2></h2>
+	<h2></h2>
+	<h2></h2>
+	
+	<script>
+ 		//1. Setter
+ 		$("img").attr("src", "http://placehold.it/100x100")
+ 		
+ 		$("img").attr({
+ 			"src": "https://www.naver.com/",
+ 			"alt": "test image" 		
+ 		})
+ 		
+ 		//높이가 100씩 차이나는 이미지
+ 		$("img").attr({
+ 			"src": function(index) { //index : 0 , 1, 2 , ..
+ 				return "http://placehold.it/100x" + ((index + 1) * 100)
+ 			},
+ 			"alt": "test image" 		
+ 		})
+ 		
+ 		//2. Getter
+ 		var test = $("img").attr("src")
+		//alert(test)
+ 	</script>
+	<script>
+		// 1. Setter
+		//$("h2").html("<img src='http://placehold.it/100x100' /> Hello World!")
+		$("h2").text("<img src='http://placehold.it/100x100' /> Hello World!")
+		
+ 	/* 	$("h2").html(function (index) { // 0 1 2 ...
+			return "Hello World - " + index
+		})  */
+		
+		// 2. Getter
+		var test = $("h2").text() // Setter해준것을 갖고옴
+		//var test = $("h2.class1").text() // Setter해준것을 갖고옴//
+		alert(test)
+		
+	</script>
+	
+</body>
+</html>
