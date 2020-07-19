@@ -4,12 +4,43 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="jquery-3.5.1.js"></script>
+<script>
+	//윈도우가 불러올때
+	window.onload = function() {
+		
+	}
+	
+	//dom이 모두 로드될때
+	/* document.addEventListener("DOMContentLoaded", fucntion() {
+		
+	});
+ 	*/
+	//일반적으로 써줘야함
+	$(document).ready(function(){
+		//alert("ready")
+	});
+	//위에보다 이렇게 간단히 쓰는 경우가 많다.
+	
+	$(function () {
+		//alert("$()")
+		
+		//ready와 find 메서드
+		for (var i=0;i<3;i++) {
+			$("<div></div>")
+				.append("<h1>Hello jQuery</h1>")
+				.append("<p>hello man</p>")
+				.appendTo("body")
+				.click(function(){ //클릭시 div 아래에 p태그만 red로
+					$(this).find("p").css("color", "red")
+					//$("p").css("color", "blue")
+				});
+		}
+			
+	});
+	
+</script>
 </head>
 <body>
-	<h1></h1>
-	
-	<script>
- 
-  	</script>
+
 </body>
 </html>
