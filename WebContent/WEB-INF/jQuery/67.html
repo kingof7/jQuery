@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function(event)</title>
+<script src="jquery-3.5.1.js"></script>
+</head>
+<body>
+	<a href="http://hanbit.co.kr">Hello</a>
+	<h1>Hello</h1>
+		
+	<script>		
+		
+ 		//event handler A,B
+ 		$("h1").click(function(event){
+ 			alert(event.currentTarget)
+ 			$(event.currentTarget).html("click!") // click후에 글자 변경
+ 			// this == event.currentTarget
+ 			$(this).css("color", "red")
+ 		})
+ 		
+ 		//100 == data
+ 		$("h1").click(100, function(event) {
+ 			//alert("안녕하세요 B");
+ 			alert(event.data);
+ 		})
+ 		
+ 		$("a").click(function (event){
+ 			//event.preventDefault()	 //a태그 기능 죽이기
+ 			//event.stopPropagation() //event기능 죽이기
+ 			
+ 			return false //위 2가지를 자동으로 적용해줌
+ 		})
+ 		
+ 		$("body").click(function(event){
+ 			$(this).css("background-color", "orange")
+ 		})
+ 	
+ 		
+  	</script>
+</body>
+</html>

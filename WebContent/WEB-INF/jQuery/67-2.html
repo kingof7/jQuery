@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function(event)</title>
+<script src="jquery-3.5.1.js"></script>
+</head>
+<body>
+	
+	<h1>Hello</h1>
+
+	
+	<script>		
+		$("h1").on("click", 100, function(event) {
+			$(this).html("click")
+		})
+		$("h1").on({
+			click: function(){
+				$(this).html("click")
+			},
+			dblclick: function(){
+				$(this).html("dblclick")
+			},
+			mouseenter: function(){
+				$(this).html("mouseenter")
+			}
+		})
+		
+		//위에 h1 클릭할때마다 아래에 h1태그 생성
+	/* 	$("h1").on("click", function(){
+			$("<h1></h1>").html("Hello").appendTo("body")
+		})
+		
+		var handler = function() {
+			$("<h1></h1>")
+					.html("Hello")
+					.appendTo("body")
+					.click(handler)
+		};
+		$("h1").on("click", handler) */
+		
+		
+		//***
+		
+		$("body").on("dblclick","h1",function(){ //바디태그를 클릭했을때 그것이 h1태그라면
+			//this == h1
+			//alert(this)
+			$(this).html("dblClick")
+			$("<h1></h1>").html("ready").appendTo("body") //요 이벤트 핸들러를 실행
+		})
+ 		
+  	</script>
+</body>
+</html>

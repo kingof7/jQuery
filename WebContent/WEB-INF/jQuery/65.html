@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<script src="jquery-3.5.1.js"></script>
+<style>
+	.header {
+		text-align: center;
+	}
+	
+	.red-text {
+		color: red;
+	}
+</style>
+
+</head>
+<body>
+	<h1>Hello</h1>
+	
+	<script>
+		//복습	
+		/* $("h1").css()
+		$("h1").attr("속성")
+		
+		$("h1").css()
+		$("h1").attr("속성", "값")
+		
+		$("h1").css({
+			"속성": function(index) { }
+		})
+				
+		$("h1").html()
+		$("h1").text() */
+		
+		$("h1").addClass("header")
+		$("h1").addClass("red-text")
+		//$("h1").hasClass("header")
+		
+		var outputA = $("h1").hasClass("header")	//true
+		var outputB = $("h1").hasClass("contents") //false
+		
+		//body뒤쪽에 붙임
+		$("<h2></h2>").html(outputA.toString()).appendTo("body")
+		$("<h2></h2>").html(outputB.toString()).appendTo("body")
+		$("<h2></h2>").html(outputB).appendTo("body")
+		
+		setTimeout(function() {
+			$("h1").removeClass("red-text")
+			$("h1").removeClass("header")
+		}, 1000 * 2)
+		
+		$("h1").toggleClass("a") // 생성
+		$("h1").toggleClass("a") // 제거
+		
+		//$("h1").remove() h1태그 제거
+		
+	</script>
+</body>
+</html>
