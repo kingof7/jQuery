@@ -4,12 +4,54 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="jquery-3.5.1.js"></script>
+<style>
+	div {
+		width: 100px; height: 100px;
+		background-color: orange;
+		position: relative;
+	}
+</style>
 </head>
 <body>
-	<h1></h1>
-	
+	<div></div>
+	<!-- <button>Toggle Show</button>
+	<div class="page">
+		<h1>근로자는 근로조건의 향상을 위하여 자주적인 단결권·단체교섭권 및 단체행동권을 가진다. 국회는 국가의 예산안을 심의·확정한다. 제3항의 승인을 얻지 못한 때에는 그 처분 또는 명령은 그때부터 효력을 상실한다.</h1>
+		<p>모든 국민은 법률이 정하는 바에 의하여 국방의 의무를 진다. 법률안에 이의가 있을 때에는 대통령은 제1항의 기간내에 이의서를 붙여 국회로 환부하고, 그 재의를 요구할 수 있다. 국회의 폐회중에도 또한 같다.</p>
+	</div> -->
 	<script>
- 
+ 		$("button").click(function(){
+ 			$().show
+ 			$("div.page").slideToggle('fast') //보이거나 보이지 않게 함
+ 		})
+ 		
+ 		$("div").click(function() {
+ 			
+ 			$(this)
+ 				.animate({
+ 					left: "+=100"
+ 				}, 1000)
+ 				.delay(1000) //ms
+ 				.animate({
+ 					left: "+=100"
+ 				}, 1000)
+ 			
+ 			/* $(this).stop(true, true) //최종 변화상태로 확확 바뀜		
+ 			$(this).animate({
+ 				left: '+=60',
+ 				width: '+=60',
+ 				height: '+=60'
+ 			}, 2000); */
+ 			
+ 			//$(this).clearQueue()
+ 			/* $(this).animate({ // 대기열->하나하나 끝날떄마다 새로운 에니메이션 실행 // 애니메이션 큐
+ 				left: '+=60'
+ 			}, 2000).animate({
+ 				width: '+=60'
+			}, 2000).animate({
+ 				height: "+=60"
+ 			}, 2000); */
+ 		});
   	</script>
 </body>
 </html>
